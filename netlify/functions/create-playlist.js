@@ -1,8 +1,8 @@
 const fetch = require('node-fetch');
 const { OAuth2Client } = require('google-auth-library');
 
-const CLIENT_ID = '301935423069-jigd73ekh4dob8ejbl9h3ckatpfmc5nd.apps.googleusercontent.com';
-const CLIENT_SECRET = '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';
+const CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
+const CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
 const REDIRECT_URI = `http://localhost:8888/.netlify/functions/oauth2callback`;
 const oauth2Client = new OAuth2Client(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI);
 
